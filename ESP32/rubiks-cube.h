@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 
-typedef int Line [FACE_SIZE]; 
+typedef int Line [FACE_SIZE];
 typedef Line Face [FACE_SIZE];
 typedef Face Cube [FACE_NUMBER];
 

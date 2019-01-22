@@ -5,14 +5,14 @@
 // ----- Face representation
 // always from top to bottom (or back to front for 1 and 6)
 
-// ------ Cube representation 
-//    
+// ------ Cube representation
+//
 //   ______
 //   |\   0 \   4 is behind
-//   | \_____\ 
+//   | \_____\
 //    \ |  1  |  3 is right
 //  2  \|_____|
-//        
+//
 //        5 is above
 
 // ----- Rotations
