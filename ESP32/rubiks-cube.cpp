@@ -1,5 +1,5 @@
 
-#include "rubiks-cube.h"
+#include "rubiks-cube.hpp"
 
 
 // ----- Face representation

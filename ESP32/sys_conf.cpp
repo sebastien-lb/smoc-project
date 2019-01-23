@@ -1,5 +1,5 @@
 
-#include "sys_conf.h"
+#include "sys_conf.hpp"
 #include <Adafruit_NeoPixel.h>
 
 void refreshCube(Cube *colorCube, Cube *ledMapping, Adafruit_NeoPixel *pixels){

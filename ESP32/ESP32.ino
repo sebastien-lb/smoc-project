@@ -1,6 +1,6 @@
-#include "colors.h"
-#include "sys_conf.h"
-#include "rubiks-cube.h"
+#include "colors.hpp"
+#include "sys_conf.hpp"
+#include "rubiks-cube.hpp"
 #include <Adafruit_NeoPixel.h>
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PINLED, NEO_GRB + NEO_KHZ800);

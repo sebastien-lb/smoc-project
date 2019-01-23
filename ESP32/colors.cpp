@@ -1,4 +1,4 @@
-#include "colors.h"
+#include "colors.hpp"
 #include <Adafruit_NeoPixel.h>
 
 uint32_t getColorConfig(Adafruit_NeoPixel *pixels, int colorCode){

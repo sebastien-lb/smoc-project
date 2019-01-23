@@ -3,9 +3,9 @@
 #ifndef DEF_SYS_CONF
 #define DEF_SYS_CONF
 
-#include "rubiks-cube.h"
+#include "rubiks-cube.hpp"
 #include <Adafruit_NeoPixel.h>
-#include "colors.h"
+#include "colors.hpp"
 
 #define PIN_LED_STRIP 5
 #define PIN_POTENTIOMETER A0
