@@ -7,13 +7,13 @@
 #include <Adafruit_NeoPixel.h>
 #include "colors.hpp"
 
-#define PIN_LED_STRIP 5
+#define PIN_LED_STRIP D5
 #define PIN_POTENTIOMETER A0
-#define PIN_BUTTON_AXE 6
-#define PIN_BUTTON_ROW 7
-#define PIN_LED_INDICATIONS 8
+#define PIN_BUTTON_AXE D6
+#define PIN_BUTTON_ROW D7
+#define PIN_LED_INDICATIONS D8
 
-#define NUMPIXELS 3
+#define NUMPIXELS 9
 
 #define minValuePot 0
 #define maxValuePot 1024

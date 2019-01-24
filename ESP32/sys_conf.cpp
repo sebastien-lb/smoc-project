@@ -4,6 +4,7 @@
 
 void refreshCube(Cube *colorCube, Cube *ledMapping, Adafruit_NeoPixel *pixels){
 
+    Serial.println("Refresh !");
     for (int face = 0; face < FACE_NUMBER; ++face) {
         for (int i = 0; i < FACE_SIZE; ++i) {
             for (int j = 0; j < FACE_SIZE; ++j) {
@@ -31,4 +32,12 @@ void setLedMapping(Cube *ledMapping) {
     *ledMapping[0][0][0] = 0;
     *ledMapping[0][0][1] = 1;
     *ledMapping[0][0][2] = 2;
+
+    *ledMapping[0][1][0] = 3;
+    *ledMapping[0][1][1] = 4;
+    *ledMapping[0][1][2] = 5;
+
+    *ledMapping[0][2][0] = 6;
+    *ledMapping[0][2][1] = 7;
+    *ledMapping[0][2][2] = 8;
 }

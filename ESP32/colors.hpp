@@ -4,6 +4,7 @@
 
 #include <Adafruit_NeoPixel.h>
 
+#define PURPLE 0
 #define RED 1
 #define BLUE 2
 #define GREEN 3

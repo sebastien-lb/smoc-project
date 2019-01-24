@@ -13,20 +13,28 @@ char row = 0;
 bool buttonAxeState = false;
 bool buttonRowState = false;
 
-Cube *colorCube = malloc(sizeof(Cube));
-Cube *ledMapping = malloc(sizeof(Cube));
+Cube *colorCube = new Cube[6];
+Cube *ledMapping = new Cube[6];
+// Cube *ledMapping = malloc(sizeof(Cube));
 
 void setup() {
+    Serial.begin(115200);
+    Serial.print("Initialization !");
+
+
     setCubeToInitialPosition(colorCube);
     setLedMapping(ledMapping);
     pixels.begin();
 
     pinMode(PIN_BUTTON_AXE, INPUT);
     pinMode(PIN_BUTTON_ROW, INPUT);
+
+    // Serial.begin(115200);
+    Serial.print("Initialization !");
 }
 
 void loop() {
-
+    // Serial.print("Test !");
     bool newButtonAxeState = digitalRead(PIN_BUTTON_AXE);
     bool newButtonRowState = digitalRead(PIN_BUTTON_ROW);
 
@@ -38,12 +46,19 @@ void loop() {
         row = (row + 1) % 3;
     }
 
+    // Serial.print("Valeur axe: ");
+    // Serial.println(axe);
+
+    // Serial.print("Valeur ligne: ");
+    // Serial.println(row);
 
     buttonAxeState = newButtonAxeState;
     buttonRowState = newButtonRowState;
 
     int newPotentiometerValue = map(analogRead(PIN_POTENTIOMETER), minValuePot, maxValuePot, minEchelle, maxEchelle);
 
+    // Serial.print("Valeur potentiometre: ");
+    // Serial.println(newPotentiometerValue);
     if (newPotentiometerValue > potentiometerValue) {
         // Tourner vers la droite
 
