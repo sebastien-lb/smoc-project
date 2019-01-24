@@ -17,6 +17,7 @@ void rotationY(Cube* cube, int rowNumber);
 void rotationZ(Cube* cube, int profNumber);
 
 void setCubeToInitialPosition(Cube* cube);
+void setCubeToColor(Cube* cube, int color);
 void displayCube(Cube* cube);
 
 

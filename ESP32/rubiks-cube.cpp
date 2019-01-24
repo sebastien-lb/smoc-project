@@ -75,6 +75,17 @@ void setCubeToInitialPosition(Cube* cube) {
     }
 }
 
+void setCubeToColor(Cube* cube, int color) {
+    for (int i = 0; i < FACE_NUMBER; ++i) {
+        for (int j = 0; j < FACE_SIZE ; ++j) {
+            for (int k = 0; k < FACE_SIZE ; ++k) {
+                *cube[i][j][k] = color;
+            }
+        }
+    }
+}
+
+
 void displayCube(Cube* cube) {
     for (int i = 0; i < FACE_NUMBER; ++i) {
         printf("\n face : %d \n", i);

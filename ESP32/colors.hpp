@@ -4,13 +4,14 @@
 
 #include <Adafruit_NeoPixel.h>
 
-#define PURPLE 0
+#define DARK 0
 #define RED 1
 #define BLUE 2
 #define GREEN 3
 #define YELLOW 4
 #define MAGENTA 5
 #define CYAN 6
+#define PURPLE 7
 
 // transform int color number to real color of adafruit
 
