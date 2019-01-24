@@ -3,7 +3,7 @@
 #include "rubiks-cube.hpp"
 #include <Adafruit_NeoPixel.h>
 
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PINLED, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN_LED_STRIP, NEO_GRB + NEO_KHZ800);
 
 int potentiometerValue = 0;
 
@@ -66,12 +66,15 @@ void loop() {
             case 0:
                 // rotation X
                 rotationX(colorCube, row);
+                break;
             case 1:
                 // rotation Y
                 rotationY(colorCube, row);
+                break;
             case 2:
                 // rotation Z
                 rotationZ(colorCube, row);
+                break;
         }
     }
     else if (newPotentiometerValue < potentiometerValue) {
@@ -83,20 +86,23 @@ void loop() {
                 rotationX(colorCube, row);
                 rotationX(colorCube, row);
                 rotationX(colorCube, row);
+                break;
             case 1:
                 // rotation Y
                 rotationY(colorCube, row);
                 rotationY(colorCube, row);
                 rotationY(colorCube, row);
+                break;
             case 2:
                 // rotation Z
                 rotationZ(colorCube, row);
                 rotationZ(colorCube, row);
                 rotationZ(colorCube, row);
+                break;
         }
     }
 
     potentiometerValue = newPotentiometerValue;
 
-    refreshCube(colorCube,ledMapping,&pixels)
+    refreshCube(colorCube,ledMapping,&pixels);
 }

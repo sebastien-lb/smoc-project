@@ -8,8 +8,8 @@ void refreshCube(Cube *colorCube, Cube *ledMapping, Adafruit_NeoPixel *pixels){
     for (int face = 0; face < FACE_NUMBER; ++face) {
         for (int i = 0; i < FACE_SIZE; ++i) {
             for (int j = 0; j < FACE_SIZE; ++j) {
-                if (ledMapping[face][i][j] >= 0) {
-                    pixels->setPixelColor(ledMapping[face][i][j], getColorConfig(pixels, colorCube[face][i][j]));
+                if (*ledMapping[face][i][j] >= 0) {
+                    pixels->setPixelColor(*ledMapping[face][i][j], getColorConfig(pixels, *colorCube[face][i][j]));
                 }
             }
         }

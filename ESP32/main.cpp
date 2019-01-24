@@ -2,11 +2,12 @@
 #define EXIT_SUCCESS 0
 
 #include <stdio.h>
-#include "rubiks-cube.h"
+#include "rubiks-cube.hpp"
 
 int main() {
 
-    Cube* cube = malloc(sizeof(Cube));
+    Cube *cube = new Cube[FACE_NUMBER * FACE_SIZE * FACE_SIZE * sizeof(int)];
+
     setCubeToInitialPosition(cube);
     displayCube(cube);
 
@@ -24,5 +25,8 @@ int main() {
     setCubeToInitialPosition(cube);
     rotationZ(cube, 2);
     displayCube(cube);
+
+    delete[] cube;
+
     return EXIT_SUCCESS;
 }
