@@ -3,7 +3,7 @@
 #include "rubiks-cube.hpp"
 #include <Adafruit_NeoPixel.h>
 
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PINLED, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN_LED_STRIP, NEO_GRB + NEO_KHZ800);
 
 int potentiometerValue = 0;
 
@@ -13,8 +13,9 @@ char row = 0;
 bool buttonAxeState = false;
 bool buttonRowState = false;
 
-Cube *colorCube = malloc(sizeof(Cube));
-Cube *ledMapping = malloc(sizeof(Cube));
+Cube *colorCube = new Cube[FACE_NUMBER * FACE_SIZE * FACE_SIZE * sizeof(int)];
+Cube *ledMapping = new Cube[FACE_NUMBER * FACE_SIZE * FACE_SIZE * sizeof(int)];
+// Cube *ledMapping = malloc(sizeof(Cube));
 
 void setup() {
     setCubeToInitialPosition(colorCube);
@@ -51,12 +52,15 @@ void loop() {
             case 0:
                 // rotation X
                 rotationX(colorCube, row);
+                break;
             case 1:
                 // rotation Y
                 rotationY(colorCube, row);
+                break;
             case 2:
                 // rotation Z
                 rotationZ(colorCube, row);
+                break;
         }
     }
     else if (newPotentiometerValue < potentiometerValue) {
@@ -68,20 +72,23 @@ void loop() {
                 rotationX(colorCube, row);
                 rotationX(colorCube, row);
                 rotationX(colorCube, row);
+                break;
             case 1:
                 // rotation Y
                 rotationY(colorCube, row);
                 rotationY(colorCube, row);
                 rotationY(colorCube, row);
+                break;
             case 2:
                 // rotation Z
                 rotationZ(colorCube, row);
                 rotationZ(colorCube, row);
                 rotationZ(colorCube, row);
+                break;
         }
     }
 
     potentiometerValue = newPotentiometerValue;
 
-    refreshCube(colorCube,ledMapping,&pixels)
+    refreshCube(colorCube,ledMapping,&pixels);
 }
