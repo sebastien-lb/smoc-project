@@ -10,8 +10,8 @@ void chargeAnimation(Adafruit_NeoPixel* pixels, Cube* cube, Cube* ledMapping, in
     for (int row = 0; row < 3; ++row) {
         for (int face = 0; face < 4; ++face) {
             for (int j = 0; j < FACE_SIZE; ++j) {
-                if (*ledMapping[face][row][j] >= 0 && cp == face*4 + j) {
-                    pixels->setPixelColor(*ledMapping[face][row][j], getColorConfig(pixels, color));
+                if (*ledMapping[faces[face]][row][j] >= 0 && cp == face*4 + j) {
+                    pixels->setPixelColor(*ledMapping[faces[face]][row][j], getColorConfig(pixels, color));
                 } 
             }
         }
@@ -23,4 +23,17 @@ void chargeAnimation(Adafruit_NeoPixel* pixels, Cube* cube, Cube* ledMapping, in
     setCubeToColor(color);
     pixels.show();
     delay(delay);    
+}
+
+
+void easterAnimation(Adafruit_NeoPixel* pixels, Cube* cube, Cube* ledMapping) {
+
+    setCubeToColor(cube, DARK);
+    // only lateral faces
+    for (int i = 0; i < 100; ++i) {
+        pixels->setPixelColor(*ledMapping[random(FACE_NUMBER)][random(FACE_SIZE)][random(FACE_SIZE)], getColorConfig(pixels, random(NB_COLOR)));
+        pixels->show();
+        delay(100);
+    }
+
 }

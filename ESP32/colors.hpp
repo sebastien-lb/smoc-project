@@ -12,6 +12,11 @@
 #define MAGENTA 5
 #define CYAN 6
 #define PURPLE 7
+#define CYAN2 8
+#define PALEGREEN 9
+#define ORANGE 10
+
+#define NB_COLOR 11
 
 // transform int color number to real color of adafruit
 
