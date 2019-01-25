@@ -6,7 +6,7 @@
 
 int main() {
 
-    Cube *cube = new Cube[FACE_NUMBER * FACE_SIZE * FACE_SIZE * sizeof(int)];
+    Cube *cube = new Cube[6];
 
     setCubeToInitialPosition(cube);
     displayCube(cube);

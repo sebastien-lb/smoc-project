@@ -20,6 +20,6 @@
 
 // transform int color number to real color of adafruit
 
-uint32_t getColorConfig(Adafruit_NeoPixel* pixels, int colorCode);
+uint32_t getColorConfig(Adafruit_NeoPixel* pixels, uint8_t colorCode);
 
 #endif

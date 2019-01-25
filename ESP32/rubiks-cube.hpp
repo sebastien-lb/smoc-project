@@ -12,12 +12,12 @@ typedef Line Face [FACE_SIZE];
 typedef Face Cube [FACE_NUMBER];
 
 
-void rotationX(Cube* cube, int columnNumber);
-void rotationY(Cube* cube, int rowNumber);
-void rotationZ(Cube* cube, int profNumber);
+void rotationX(Cube* cube, uint8_t columnNumber);
+void rotationY(Cube* cube, uint8_t rowNumber);
+void rotationZ(Cube* cube, uint8_t profNumber);
 
 void setCubeToInitialPosition(Cube* cube);
-void setCubeToColor(Cube* cube, int color);
+void setCubeToColor(Cube* cube, uint8_t color);
 void displayCube(Cube* cube);
 
 

@@ -5,22 +5,20 @@
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN_LED_STRIP, NEO_GRB + NEO_KHZ800);
 
-int potentiometerValue = 0;
+uint8_t potentiometerValue = 0;
 
-char axe = 0;
-char row = 0;
+uint8_t axe = 0;
+uint8_t row = 0;
 
 bool buttonAxeState = false;
 bool buttonRowState = false;
 
 Cube *colorCube = new Cube[6];
 Cube *ledMapping = new Cube[6];
-// Cube *ledMapping = malloc(sizeof(Cube));
 
 void setup() {
     Serial.begin(115200);
     Serial.print("Initialization !");
-
 
     setCubeToInitialPosition(colorCube);
     setLedMapping(ledMapping);
@@ -29,12 +27,9 @@ void setup() {
     pinMode(PIN_BUTTON_AXE, INPUT);
     pinMode(PIN_BUTTON_ROW, INPUT);
 
-    // Serial.begin(115200);
-    Serial.print("Initialization !");
 }
 
 void loop() {
-    // Serial.print("Test !");
     bool newButtonAxeState = digitalRead(PIN_BUTTON_AXE);
     bool newButtonRowState = digitalRead(PIN_BUTTON_ROW);
 
@@ -55,7 +50,7 @@ void loop() {
     buttonAxeState = newButtonAxeState;
     buttonRowState = newButtonRowState;
 
-    int newPotentiometerValue = map(analogRead(PIN_POTENTIOMETER), minValuePot, maxValuePot, minEchelle, maxEchelle);
+    uint8_t newPotentiometerValue = map(analogRead(PIN_POTENTIOMETER), minValuePot, maxValuePot, minEchelle, maxEchelle);
 
     // Serial.print("Valeur potentiometre: ");
     // Serial.println(newPotentiometerValue);
@@ -105,4 +100,5 @@ void loop() {
     potentiometerValue = newPotentiometerValue;
 
     refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
 }

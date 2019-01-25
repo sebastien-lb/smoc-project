@@ -1,7 +1,7 @@
 #include "colors.hpp"
 #include <Adafruit_NeoPixel.h>
 
-uint32_t getColorConfig(Adafruit_NeoPixel *pixels, int colorCode){
+uint32_t getColorConfig(Adafruit_NeoPixel *pixels, uint8_t colorCode){
     switch (colorCode) {
         case DARK:
             return pixels->Color(0, 0, 0);
