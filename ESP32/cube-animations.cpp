@@ -2,7 +2,7 @@
 #include "cube-animations.hpp"
 #include "colors.hpp"
 
-void chargeAnimation(Adafruit_NeoPixel* pixels, Cube* cube, Cube* ledMapping, uint8_t color, uint8_t delayval) {
+void chargeAnimation(Adafruit_NeoPixel* pixels, Cube* cube, Cube* ledMapping, uint8_t color, uint8_t delayVal) {
 
     setCubeToColor(cube, DARK);
     // only lateral faces
@@ -16,13 +16,13 @@ void chargeAnimation(Adafruit_NeoPixel* pixels, Cube* cube, Cube* ledMapping, ui
             }
         }
         pixels->show();
-        delay(delayval);
+        delay(delayVal);
     }
 
     // top
     setCubeToColor(cube, color);
     pixels->show();
-    delay(delayval);
+    delay(delayVal);
 }
 
 
@@ -31,7 +31,9 @@ void easterAnimation(Adafruit_NeoPixel* pixels, Cube* cube, Cube* ledMapping) {
     setCubeToColor(cube, DARK);
     // only lateral faces
     for (uint8_t i = 0; i < 100; ++i) {
-        pixels->setPixelColor(*ledMapping[random(FACE_NUMBER)][random(FACE_SIZE)][random(FACE_SIZE)], getColorConfig(pixels, random(NB_COLOR)));
+        for (uint8_t j = 0; j < random(1,3); j++) {
+            pixels->setPixelColor(*ledMapping[random(FACE_NUMBER)][random(FACE_SIZE)][random(FACE_SIZE)], getColorConfig(pixels, random(NB_COLOR)));
+        }
         pixels->show();
         delay(100);
     }
