@@ -13,7 +13,7 @@
 #define PIN_BUTTON_ROW D7
 #define PIN_LED_INDICATIONS D8
 
-#define NUMPIXELS 9
+#define NUMPIXELS 45
 
 #define minValuePot 0
 #define maxValuePot 1024

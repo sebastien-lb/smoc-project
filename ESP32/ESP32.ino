@@ -1,6 +1,7 @@
 #include "colors.hpp"
 #include "sys_conf.hpp"
 #include "rubiks-cube.hpp"
+#include "cube-animations.hpp"
 #include <Adafruit_NeoPixel.h>
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN_LED_STRIP, NEO_GRB + NEO_KHZ800);
@@ -99,6 +100,61 @@ void loop() {
 
     potentiometerValue = newPotentiometerValue;
 
+    chargeAnimation(&pixels, colorCube, ledMapping, ORANGE, 300);
+    
+    setCubeToInitialPosition(colorCube);
+    delay(2000);
+
     refreshCube(colorCube,ledMapping,&pixels);
     delay(2000);
+    rotationX(colorCube, 0);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationX(colorCube, 1);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationZ(colorCube, 2);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationZ(colorCube, 0);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(8000);
+    
+
+    setCubeToInitialPosition(colorCube);
+    delay(2000);
+
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationY(colorCube, 0);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationY(colorCube, 1);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationX(colorCube, 2);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationX(colorCube, 0);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(8000);
+    
+
+    setCubeToInitialPosition(colorCube);
+    delay(2000);
+
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationZ(colorCube, 0);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationZ(colorCube, 1);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationY(colorCube, 2);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(2000);
+    rotationY(colorCube, 0);
+    refreshCube(colorCube,ledMapping,&pixels);
+    delay(8000);
 }

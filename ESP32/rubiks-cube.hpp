@@ -6,6 +6,7 @@
 #define FACE_SIZE 3
 
 #include <stdio.h>
+#include "colors.hpp"
 
 typedef int Line [FACE_SIZE];
 typedef Line Face [FACE_SIZE];
@@ -15,6 +16,8 @@ typedef Face Cube [FACE_NUMBER];
 void rotationX(Cube* cube, uint8_t columnNumber);
 void rotationY(Cube* cube, uint8_t rowNumber);
 void rotationZ(Cube* cube, uint8_t profNumber);
+
+void rotateFace(Cube* cube, uint8_t faceNumber);
 
 void setCubeToInitialPosition(Cube* cube);
 void setCubeToColor(Cube* cube, uint8_t color);
