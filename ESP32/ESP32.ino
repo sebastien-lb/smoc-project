@@ -28,6 +28,9 @@ void setup() {
     pinMode(PIN_BUTTON_AXE, INPUT);
     pinMode(PIN_BUTTON_ROW, INPUT);
 
+    // chargeAnimation(&pixels, colorCube, ledMapping, ORANGE, 300);
+    setCubeToInitialPosition(colorCube);
+    displayCube(colorCube);
 }
 
 void loop() {
@@ -53,8 +56,8 @@ void loop() {
 
     uint8_t newPotentiometerValue = map(analogRead(PIN_POTENTIOMETER), minValuePot, maxValuePot, minEchelle, maxEchelle);
 
-    // Serial.print("Valeur potentiometre: ");
-    // Serial.println(newPotentiometerValue);
+    Serial.print("Valeur potentiometre: ");
+    Serial.println(newPotentiometerValue);
     if (newPotentiometerValue > potentiometerValue) {
         // Tourner vers la droite
 
@@ -100,61 +103,11 @@ void loop() {
 
     potentiometerValue = newPotentiometerValue;
 
-    chargeAnimation(&pixels, colorCube, ledMapping, ORANGE, 300);
-    
-    setCubeToInitialPosition(colorCube);
-    delay(2000);
+    refreshCube(colorCube, ledMapping, &pixels);
+    delay(100);
 
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationX(colorCube, 0);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationX(colorCube, 1);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationZ(colorCube, 2);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationZ(colorCube, 0);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(8000);
-    
+    // easterAnimation(&pixels, ledMapping);
+    // refreshCube(colorCube, ledMapping, &pixels);
+    // delay(10000);
 
-    setCubeToInitialPosition(colorCube);
-    delay(2000);
-
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationY(colorCube, 0);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationY(colorCube, 1);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationX(colorCube, 2);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationX(colorCube, 0);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(8000);
-    
-
-    setCubeToInitialPosition(colorCube);
-    delay(2000);
-
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationZ(colorCube, 0);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationZ(colorCube, 1);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationY(colorCube, 2);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(2000);
-    rotationY(colorCube, 0);
-    refreshCube(colorCube,ledMapping,&pixels);
-    delay(8000);
 }
